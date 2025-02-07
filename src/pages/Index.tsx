@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { ArrowRight, Brain, Code, Flask, Sparkles } from "lucide-react";
+import { ArrowRight, Brain, Code, Beaker, Sparkles } from "lucide-react";
 
 const Index = () => {
   return (
@@ -79,7 +79,7 @@ const Index = () => {
             {[
               { icon: Brain, title: "AI Integration", description: "Leveraging artificial intelligence for medical advancement" },
               { icon: Code, title: "Tech Innovation", description: "Building cutting-edge healthcare solutions" },
-              { icon: Flask, title: "Research Focus", description: "Evidence-based approach to development" },
+              { icon: Beaker, title: "Research Focus", description: "Evidence-based approach to development" },
               { icon: Sparkles, title: "Future Ready", description: "Preparing for tomorrow's healthcare challenges" },
             ].map((feature, index) => (
               <motion.div
