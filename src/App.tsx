@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -20,9 +21,9 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen bg-wolf-100 dark:bg-wolf-900 transition-colors duration-300">
+        <div className="min-h-screen bg-wolf-100 dark:bg-wolf-900 transition-colors duration-300 flex flex-col">
           <Navigation />
-          <main className="pt-20 container mx-auto px-4">
+          <main className="flex-1 pt-20 container mx-auto px-4">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
@@ -32,6 +33,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
+          <Footer />
         </div>
       </BrowserRouter>
     </TooltipProvider>
