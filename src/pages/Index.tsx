@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Brain, Code, Beaker, Stethoscope, Quote } from "lucide-react";
+import { ArrowRight, Brain, Code, Beaker, Stethoscope, Quote, Download, ChevronDown } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Index = () => {
   const testimonials = [
@@ -19,6 +25,37 @@ const Index = () => {
       role: "Medical Research Director"
     }
   ];
+
+  const resumeData = {
+    education: [
+      {
+        period: "2020 - Present",
+        title: "Doctor of Medicine",
+        institution: "Medical University",
+        description: "Specializing in Clinical Medicine with focus on Healthcare Technology"
+      },
+      {
+        period: "2016 - 2020",
+        title: "BSc in Computer Science",
+        institution: "Tech University",
+        description: "Focus on Software Engineering and AI/ML applications in Healthcare"
+      }
+    ],
+    experience: [
+      {
+        period: "2021 - Present",
+        title: "Healthcare Software Developer",
+        company: "HealthTech Solutions",
+        description: "Developing innovative healthcare applications using modern web technologies"
+      },
+      {
+        period: "2019 - 2021",
+        title: "Medical Research Assistant",
+        company: "Central Hospital",
+        description: "Conducted research on AI applications in medical diagnosis"
+      }
+    ]
+  };
 
   return (
     <div className="min-h-[calc(100vh-5rem)]">
@@ -134,6 +171,103 @@ const Index = () => {
           </motion.div>
         ))}
       </motion.div>
+
+      {/* Resume Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.7 }}
+        className="py-16 bg-white dark:bg-wolf-800"
+      >
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-wolf-800 dark:text-wolf-100 mb-4">
+              Professional Journey
+            </h2>
+            <p className="text-wolf-600 dark:text-wolf-300 max-w-2xl mx-auto mb-8">
+              Explore my academic and professional experience in medicine and technology
+            </p>
+            <motion.a
+              href="/Clement_CV.pdf"
+              download
+              className="inline-flex items-center gap-2 px-6 py-3 bg-wolf-800 dark:bg-wolf-100 text-wolf-100 dark:text-wolf-800 rounded-lg hover:bg-wolf-700 dark:hover:bg-wolf-200 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Download className="w-5 h-5" />
+              Download CV
+            </motion.a>
+          </div>
+
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="education">
+                <AccordionTrigger className="text-xl font-semibold text-wolf-800 dark:text-wolf-100">
+                  Education
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="space-y-6 pt-4">
+                    {resumeData.education.map((item, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.1 * index }}
+                        className="relative pl-8 border-l-2 border-wolf-300 dark:border-wolf-600"
+                      >
+                        <span className="text-sm text-wolf-500 dark:text-wolf-400">
+                          {item.period}
+                        </span>
+                        <h3 className="text-lg font-semibold text-wolf-800 dark:text-wolf-100 mt-1">
+                          {item.title}
+                        </h3>
+                        <p className="text-wolf-600 dark:text-wolf-300">
+                          {item.institution}
+                        </p>
+                        <p className="text-wolf-500 dark:text-wolf-400 text-sm mt-2">
+                          {item.description}
+                        </p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="experience">
+                <AccordionTrigger className="text-xl font-semibold text-wolf-800 dark:text-wolf-100">
+                  Experience
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="space-y-6 pt-4">
+                    {resumeData.experience.map((item, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.1 * index }}
+                        className="relative pl-8 border-l-2 border-wolf-300 dark:border-wolf-600"
+                      >
+                        <span className="text-sm text-wolf-500 dark:text-wolf-400">
+                          {item.period}
+                        </span>
+                        <h3 className="text-lg font-semibold text-wolf-800 dark:text-wolf-100 mt-1">
+                          {item.title}
+                        </h3>
+                        <p className="text-wolf-600 dark:text-wolf-300">
+                          {item.company}
+                        </p>
+                        <p className="text-wolf-500 dark:text-wolf-400 text-sm mt-2">
+                          {item.description}
+                        </p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </motion.section>
 
       {/* Testimonials Section */}
       <motion.section
