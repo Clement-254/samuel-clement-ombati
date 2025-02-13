@@ -65,9 +65,26 @@
 }
 
 .glass-morphism {
-  @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.1)];
+  @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_16px_-4px_rgba(0,0,0,0.2)] transition-all duration-300;
 }
 
 .hover-scale {
-  @apply transition-transform duration-200 hover:scale-105;
+  @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
 }
+
+.text-gradient {
+  @apply bg-gradient-to-r from-wolf-600 to-wolf-400 dark:from-wolf-400 dark:to-wolf-200 bg-clip-text text-transparent;
+}
+
+.link-underline {
+  @apply relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-wolf-500 dark:after:bg-wolf-300 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:translate-y-[-4px] hover:shadow-xl;
+}
+
+.button-pop {
+  @apply transform active:scale-95 transition-transform;
+}
+
