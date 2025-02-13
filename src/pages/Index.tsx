@@ -1,8 +1,26 @@
 
 import { motion } from "framer-motion";
-import { ArrowRight, Brain, Code, Beaker, Stethoscope } from "lucide-react";
+import { ArrowRight, Brain, Code, Beaker, Stethoscope, Quote } from "lucide-react";
 
 const Index = () => {
+  const testimonials = [
+    {
+      text: "Clement's unique blend of medical knowledge and technical expertise makes him an invaluable asset in healthcare innovation.",
+      author: "Dr. Sarah Chen",
+      role: "Chief of Medicine, Central Hospital"
+    },
+    {
+      text: "His ability to bridge the gap between clinical medicine and software development is remarkable. A true innovator in healthcare tech.",
+      author: "James Wilson",
+      role: "Tech Lead, HealthTech Solutions"
+    },
+    {
+      text: "Clement brings a fresh perspective to medical software development, combining clinical insights with technical excellence.",
+      author: "Dr. Michael Roberts",
+      role: "Medical Research Director"
+    }
+  ];
+
   return (
     <div className="min-h-[calc(100vh-5rem)]">
       {/* Hero Section */}
@@ -117,6 +135,67 @@ const Index = () => {
           </motion.div>
         </div>
       </motion.div>
+
+      {/* Testimonials Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8 }}
+        className="py-20 bg-wolf-100 dark:bg-wolf-900"
+      >
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-wolf-800 dark:text-wolf-100 mb-4">
+              Testimonials
+            </h2>
+            <p className="text-wolf-600 dark:text-wolf-300 max-w-2xl mx-auto">
+              What mentors and colleagues say about my work in medicine and technology
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9 + index * 0.1 }}
+                className="glass-morphism p-6 rounded-xl relative"
+              >
+                <Quote className="w-8 h-8 text-wolf-400 dark:text-wolf-600 absolute -top-4 -left-4" />
+                <div className="space-y-4">
+                  <p className="text-wolf-700 dark:text-wolf-200 italic">
+                    "{testimonial.text}"
+                  </p>
+                  <div>
+                    <p className="font-semibold text-wolf-800 dark:text-wolf-100">
+                      {testimonial.author}
+                    </p>
+                    <p className="text-sm text-wolf-600 dark:text-wolf-400">
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+            className="mt-12 text-center"
+          >
+            <a
+              href="/about"
+              className="inline-flex items-center gap-2 text-wolf-700 dark:text-wolf-300 hover:text-wolf-800 dark:hover:text-wolf-100 transition-colors"
+            >
+              View More Recommendations
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </motion.div>
+        </div>
+      </motion.section>
     </div>
   );
 };
