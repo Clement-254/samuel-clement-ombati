@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { ArrowRight, Brain, Code, Beaker, Sparkles } from "lucide-react";
+import { ArrowRight, Brain, Code, Beaker, Stethoscope } from "lucide-react";
 
 const Index = () => {
   return (
@@ -21,7 +21,7 @@ const Index = () => {
               className="mb-2"
             >
               <span className="px-4 py-1 rounded-full bg-wolf-200 dark:bg-wolf-800 text-wolf-600 dark:text-wolf-300 text-xs md:text-sm">
-                Bridging Medicine & AI
+                Clinical Medicine Student & Software Developer
               </span>
             </motion.div>
 
@@ -31,9 +31,9 @@ const Index = () => {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-5xl lg:text-7xl font-bold text-wolf-800 dark:text-wolf-100"
             >
-              Innovating for a
+              Bridging Medicine
               <span className="block bg-gradient-to-r from-wolf-600 to-wolf-400 dark:from-wolf-400 dark:to-wolf-200 bg-clip-text text-transparent">
-                Smarter Future
+                & Technology
               </span>
             </motion.h1>
 
@@ -43,8 +43,8 @@ const Index = () => {
               transition={{ delay: 0.4 }}
               className="text-lg md:text-xl text-wolf-600 dark:text-wolf-300 max-w-2xl mx-auto px-4"
             >
-              Combining medical expertise with artificial intelligence to create innovative solutions
-              for healthcare and beyond.
+              As a Clinical Medicine student and Software Developer, I'm passionate about leveraging technology 
+              to revolutionize healthcare delivery and improve patient outcomes.
             </motion.p>
 
             <motion.div
@@ -54,17 +54,17 @@ const Index = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center mt-8 px-4"
             >
               <a
-                href="/projects"
+                href="/about"
                 className="group px-6 py-3 rounded-lg bg-wolf-800 dark:bg-wolf-100 text-wolf-100 dark:text-wolf-800 hover:bg-wolf-700 dark:hover:bg-wolf-200 transition-colors flex items-center justify-center gap-2"
               >
-                View Projects
+                Learn More
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="/contact"
                 className="px-6 py-3 rounded-lg border border-wolf-300 dark:border-wolf-700 text-wolf-800 dark:text-wolf-100 hover:bg-wolf-200 dark:hover:bg-wolf-800 transition-colors"
               >
-                Get in Touch
+                Contact Me
               </a>
             </motion.div>
           </div>
@@ -77,10 +77,26 @@ const Index = () => {
             className="mt-16 md:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 px-4"
           >
             {[
-              { icon: Brain, title: "AI Integration", description: "Leveraging artificial intelligence for medical advancement" },
-              { icon: Code, title: "Tech Innovation", description: "Building cutting-edge healthcare solutions" },
-              { icon: Beaker, title: "Research Focus", description: "Evidence-based approach to development" },
-              { icon: Sparkles, title: "Future Ready", description: "Preparing for tomorrow's healthcare challenges" },
+              { 
+                icon: Stethoscope, 
+                title: "Clinical Medicine", 
+                description: "Pursuing advanced medical education with focus on patient care and modern healthcare practices" 
+              },
+              { 
+                icon: Code, 
+                title: "Software Development", 
+                description: "Building healthcare solutions with modern web technologies and best practices" 
+              },
+              { 
+                icon: Brain, 
+                title: "AI in Healthcare", 
+                description: "Exploring the intersection of artificial intelligence and medical diagnosis" 
+              },
+              { 
+                icon: Beaker, 
+                title: "Medical Research", 
+                description: "Contributing to evidence-based healthcare through technology-driven research" 
+              },
             ].map((feature, index) => (
               <motion.div
                 key={feature.title}
