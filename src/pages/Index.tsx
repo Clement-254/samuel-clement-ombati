@@ -1,16 +1,15 @@
-
 import { motion } from "framer-motion";
 import { ArrowRight, Brain, Code, Beaker, Stethoscope, Quote } from "lucide-react";
 
 const Index = () => {
   const testimonials = [
     {
-      text: "Clement's unique blend of medical knowledge and technical expertise makes him an invaluable asset in healthcare innovation.",
+      text: "Clement's extraordinary blend of medical knowledge and technical expertise makes him an invaluable asset in healthcare innovation.",
       author: "Dr. Sarah Chen",
       role: "Chief of Medicine, Central Hospital"
     },
     {
-      text: "His ability to bridge the gap between clinical medicine and software development is remarkable. A true innovator in healthcare tech.",
+      text: "His ability to bridge the gap between clinical medicine and software development is remarkable. A true pioneer in healthcare tech.",
       author: "James Wilson",
       role: "Tech Lead, HealthTech Solutions"
     },
@@ -86,54 +85,54 @@ const Index = () => {
               </a>
             </motion.div>
           </div>
-
-          {/* Feature Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="mt-16 md:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 px-4"
-          >
-            {[
-              { 
-                icon: Stethoscope, 
-                title: "Clinical Medicine", 
-                description: "Pursuing advanced medical education with focus on patient care and modern healthcare practices" 
-              },
-              { 
-                icon: Code, 
-                title: "Software Development", 
-                description: "Building healthcare solutions with modern web technologies and best practices" 
-              },
-              { 
-                icon: Brain, 
-                title: "AI in Healthcare", 
-                description: "Exploring the intersection of artificial intelligence and medical diagnosis" 
-              },
-              { 
-                icon: Beaker, 
-                title: "Medical Research", 
-                description: "Contributing to evidence-based healthcare through technology-driven research" 
-              },
-            ].map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 + index * 0.1 }}
-                className="glass-morphism p-4 md:p-6 rounded-xl hover-scale"
-              >
-                <feature.icon className="w-8 h-8 md:w-10 md:h-10 text-wolf-600 dark:text-wolf-300 mb-4" />
-                <h3 className="text-lg md:text-xl font-semibold text-wolf-800 dark:text-wolf-100 mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-sm md:text-base text-wolf-600 dark:text-wolf-300">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
+      </motion.div>
+
+      {/* Feature Grid */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6 }}
+        className="mt-16 md:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 px-4"
+      >
+        {[
+          { 
+            icon: Stethoscope, 
+            title: "Clinical Medicine", 
+            description: "Pursuing advanced medical education with focus on patient care and modern healthcare practices" 
+          },
+          { 
+            icon: Code, 
+            title: "Software Development", 
+            description: "Building healthcare solutions with modern web technologies and best practices" 
+          },
+          { 
+            icon: Brain, 
+            title: "AI in Healthcare", 
+            description: "Exploring the intersection of artificial intelligence and medical diagnosis" 
+          },
+          { 
+            icon: Beaker, 
+            title: "Medical Research", 
+            description: "Contributing to evidence-based healthcare through technology-driven research" 
+          },
+        ].map((feature, index) => (
+          <motion.div
+            key={feature.title}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 + index * 0.1 }}
+            className="glass-morphism p-4 md:p-6 rounded-xl hover-scale"
+          >
+            <feature.icon className="w-8 h-8 md:w-10 md:h-10 text-wolf-600 dark:text-wolf-300 mb-4" />
+            <h3 className="text-lg md:text-xl font-semibold text-wolf-800 dark:text-wolf-100 mb-2">
+              {feature.title}
+            </h3>
+            <p className="text-sm md:text-base text-wolf-600 dark:text-wolf-300">
+              {feature.description}
+            </p>
+          </motion.div>
+        ))}
       </motion.div>
 
       {/* Testimonials Section */}
