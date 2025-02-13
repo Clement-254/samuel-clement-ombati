@@ -25,8 +25,15 @@ export default function Navigation() {
     <nav className="fixed top-0 w-full z-50 glass-morphism">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold text-wolf-800 dark:text-wolf-100">
-            WolfGuard
+          <Link to="/" className="flex items-center gap-2">
+            <img 
+              src="/lovable-uploads/bf301a9b-a6eb-4caf-96a9-40326349caa9.png" 
+              alt="Clement Logo" 
+              className="h-8 w-auto"
+            />
+            <span className="text-2xl font-bold text-wolf-800 dark:text-wolf-100">
+              Clement
+            </span>
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
