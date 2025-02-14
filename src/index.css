@@ -60,14 +60,16 @@
   }
 }
 
-.page-transition {
-  @apply animate-fade-in;
-}
+@layer components {
+  .page-transition {
+    @apply animate-fade-in;
+  }
 
-.glass-morphism {
-  @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.1)];
-}
+  .glass-morphism {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.1)];
+  }
 
-.hover-scale {
-  @apply transition-transform duration-200 hover:scale-105;
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
 }
