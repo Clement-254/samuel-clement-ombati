@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-wolf-800 dark:text-wolf-100">Clement</h3>
+            <h3 className="text-xl font-bold text-wolf-800 dark:text-wolf-100">WolfGuard</h3>
             <p className="text-wolf-600 dark:text-wolf-300 text-sm md:text-base">
               Bridging Medicine & AI for a smarter future in healthcare.
             </p>
@@ -59,7 +59,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-wolf-300 dark:border-wolf-700">
           <p className="text-center text-wolf-600 dark:text-wolf-300 text-sm md:text-base">
-            © {new Date().getFullYear()} Clement. All rights reserved.
+            © {new Date().getFullYear()} WolfGuard. All rights reserved.
           </p>
         </div>
       </div>
