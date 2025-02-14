@@ -1,16 +1,27 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Moon, Sun } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Navigation() {
   const [isDark, setIsDark] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const isMobile = useIsMobile();
 
   const toggleTheme = () => {
     setIsDark(!isDark);
     document.documentElement.classList.toggle("dark");
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   const navItems = [
@@ -36,6 +47,7 @@ export default function Navigation() {
             </span>
           </Link>
           
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
@@ -51,17 +63,52 @@ export default function Navigation() {
             ))}
           </div>
 
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-ocean-200/10 transition-colors"
-          >
-            {isDark ? (
-              <Sun className="w-5 h-5 text-ocean-100" />
-            ) : (
-              <Moon className="w-5 h-5 text-ocean-800" />
-            )}
-          </button>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-ocean-200/10 transition-colors"
+            >
+              {isDark ? (
+                <Sun className="w-5 h-5 text-ocean-100" />
+              ) : (
+                <Moon className="w-5 h-5 text-ocean-800" />
+              )}
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMobileMenu}
+              className="md:hidden p-2 rounded-full hover:bg-ocean-200/10 transition-colors"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6 text-ocean-800 dark:text-ocean-100" />
+              ) : (
+                <Menu className="w-6 h-6 text-ocean-800 dark:text-ocean-100" />
+              )}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden">
+            <div className="py-4 space-y-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  onClick={closeMobileMenu}
+                  className={cn(
+                    "block py-2 px-4 rounded-lg text-ocean-600 dark:text-ocean-300 hover:bg-ocean-100 dark:hover:bg-ocean-800 transition-colors",
+                    location.pathname === item.path && "bg-ocean-100 dark:bg-ocean-800 text-ocean-800 dark:text-ocean-100 font-semibold"
+                  )}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
