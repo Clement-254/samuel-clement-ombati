@@ -17,7 +17,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
     console.log("Form submitted:", formData);
     toast({
       title: "Message Sent!",
@@ -38,9 +37,9 @@ const Contact = () => {
       exit={{ opacity: 0, y: -20 }}
       className="page-transition"
     >
-      <h1 className="text-4xl font-bold mb-6 text-wolf-800 dark:text-wolf-100">Contact</h1>
+      <h1 className="text-4xl font-bold mb-6 text-ocean-800 dark:text-ocean-100">Contact</h1>
       <div className="max-w-2xl mx-auto">
-        <div className="bg-white dark:bg-wolf-800 rounded-lg p-6 shadow-sm">
+        <div className="bg-white dark:bg-ocean-800 rounded-lg p-6 shadow-sm">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <Label htmlFor="name">Name</Label>
@@ -90,23 +89,23 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Your message here..."
-                className="w-full mt-1 min-h-[150px] rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-full mt-1 min-h-[150px] rounded-md border border-ocean-200 dark:border-ocean-700 bg-white dark:bg-ocean-800 px-3 py-2 text-sm ring-offset-background placeholder:text-ocean-400 dark:placeholder:text-ocean-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 required
               />
             </div>
             
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full bg-ocean-600 hover:bg-ocean-700 text-white">
               <Send className="w-4 h-4 mr-2" />
               Send Message
             </Button>
           </form>
 
           <div className="mt-8 space-y-4">
-            <div className="flex items-center text-wolf-600 dark:text-wolf-300">
+            <div className="flex items-center text-ocean-600 dark:text-ocean-300">
               <Mail className="w-5 h-5 mr-3" />
               <span>contact@example.com</span>
             </div>
-            <div className="flex items-center text-wolf-600 dark:text-wolf-300">
+            <div className="flex items-center text-ocean-600 dark:text-ocean-300">
               <MessageSquare className="w-5 h-5 mr-3" />
               <span>Available for consultations and collaborations</span>
             </div>

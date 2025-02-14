@@ -9,7 +9,7 @@ const Blog = () => {
       exit={{ opacity: 0, y: -20 }}
       className="page-transition"
     >
-      <h1 className="text-4xl font-bold mb-6 text-wolf-800 dark:text-wolf-100">Blog</h1>
+      <h1 className="text-4xl font-bold mb-6 text-ocean-800 dark:text-ocean-100">Blog</h1>
       <div className="grid gap-6 md:grid-cols-2">
         {/* Blog posts will be added here */}
       </div>

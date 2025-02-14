@@ -41,7 +41,7 @@ const Projects = () => {
       exit={{ opacity: 0, y: -20 }}
       className="page-transition"
     >
-      <h1 className="text-4xl font-bold mb-6 text-wolf-800 dark:text-wolf-100">Projects</h1>
+      <h1 className="text-4xl font-bold mb-6 text-ocean-800 dark:text-ocean-100">Projects</h1>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
         {projects.map((project, index) => (
           <motion.div
@@ -49,18 +49,18 @@ const Projects = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-white dark:bg-wolf-800 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            className="bg-white dark:bg-ocean-800 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="flex items-center mb-4">
-              <project.icon className="w-6 h-6 text-wolf-600 dark:text-wolf-300 mr-3" />
-              <h3 className="text-xl font-semibold text-wolf-700 dark:text-wolf-200">{project.title}</h3>
+              <project.icon className="w-6 h-6 text-ocean-600 dark:text-ocean-300 mr-3" />
+              <h3 className="text-xl font-semibold text-ocean-700 dark:text-ocean-200">{project.title}</h3>
             </div>
-            <p className="text-wolf-600 dark:text-wolf-300 mb-4">{project.description}</p>
+            <p className="text-ocean-600 dark:text-ocean-300 mb-4">{project.description}</p>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 text-sm bg-wolf-100 dark:bg-wolf-700 text-wolf-600 dark:text-wolf-300 rounded-full"
+                  className="px-3 py-1 text-sm bg-ocean-100 dark:bg-ocean-700 text-ocean-600 dark:text-ocean-300 rounded-full"
                 >
                   {tag}
                 </span>
@@ -68,7 +68,7 @@ const Projects = () => {
             </div>
             <a
               href={project.link}
-              className="inline-flex items-center text-wolf-600 dark:text-wolf-300 hover:text-wolf-800 dark:hover:text-wolf-100 transition-colors"
+              className="inline-flex items-center text-ocean-600 dark:text-ocean-300 hover:text-ocean-800 dark:hover:text-ocean-100 transition-colors"
             >
               Learn More →
             </a>
