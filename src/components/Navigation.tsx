@@ -38,12 +38,12 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             <img 
-              src="/lovable-uploads/3fc59e52-d88b-495c-a1a9-7149c39469e1.png" 
+              src="/pic-uploads/selfie.png" 
               alt="Clement Logo" 
               className="h-10 w-10 rounded-full object-cover border-2 border-ocean-500"
             />
             <span className="text-2xl font-bold text-ocean-600 dark:text-ocean-400">
-              Clement
+              Clement Ombati
             </span>
           </Link>
           

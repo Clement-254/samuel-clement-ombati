@@ -49,7 +49,7 @@ const Projects = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-white dark:bg-ocean-800 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            className="bg-blue-100 text-black dark:bg-blue-800 dark:text-blue-300 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="flex items-center mb-4">
               <project.icon className="w-6 h-6 text-ocean-600 dark:text-ocean-300 mr-3" />
