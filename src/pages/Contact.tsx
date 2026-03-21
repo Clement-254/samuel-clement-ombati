@@ -15,16 +15,36 @@ const Contact = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  };
 
+    try {
+      console.log("Form submitted:", formData);
+
+      const response = await fetch("http://localhost:5000/contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) throw new Error("Failed to send message");
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+      });
+    }
+  };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -39,7 +59,7 @@ const Contact = () => {
     >
       <h1 className="text-4xl font-bold mb-6 text-ocean-800 dark:text-ocean-100">Contact</h1>
       <div className="max-w-2xl mx-auto">
-        <div className="bg-white dark:bg-ocean-800 rounded-lg p-6 shadow-sm">
+        <div className="bg-blue-100 text-black dark:bg-blue-800 dark:text-blue-300 rounded-lg p-6 shadow-sm">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <Label htmlFor="name">Name</Label>
@@ -94,7 +114,7 @@ const Contact = () => {
               />
             </div>
             
-            <Button type="submit" className="w-full bg-ocean-600 hover:bg-ocean-700 text-white">
+            <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-50 border border-blue-900 dark:bg-blue-200 dark:text-blue-600 rounded-lg transition-colors duration-200">
               <Send className="w-4 h-4 mr-2" />
               Send Message
             </Button>
@@ -103,7 +123,7 @@ const Contact = () => {
           <div className="mt-8 space-y-4">
             <div className="flex items-center text-ocean-600 dark:text-ocean-300">
               <Mail className="w-5 h-5 mr-3" />
-              <span>contact@example.com</span>
+              <span>contact@ombatisamuelclement@gmail.com</span>
             </div>
             <div className="flex items-center text-ocean-600 dark:text-ocean-300">
               <MessageSquare className="w-5 h-5 mr-3" />

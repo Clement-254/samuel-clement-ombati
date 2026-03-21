@@ -1,6 +1,7 @@
 
 import { motion } from "framer-motion";
-import { Code, Brain, BookOpen, Activity } from "lucide-react";
+import { Code, Brain, BookOpen, Activity, Github } from 'lucide-react';
+import * as HoverCardPrimitive from '@radix-ui/react-hover-card';
 
 const Projects = () => {
   const projects = [
@@ -41,7 +42,9 @@ const Projects = () => {
       exit={{ opacity: 0, y: -20 }}
       className="page-transition"
     >
-      <h1 className="text-4xl font-bold mb-6 text-ocean-800 dark:text-ocean-100">Projects</h1>
+      <h1 className="text-4xl font-bold mb-6 text-ocean-800 dark:text-ocean-100">
+        My Projects: For more information visit my Github repository <a href="https://github.com/Clement-254?tab=repositories" className="text-ocean-600 dark:text-ocean-300 hover:text-ocean-800 dark:hover:text-ocean-100 transition-colors">here</a>     
+      </h1>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
         {projects.map((project, index) => (
           <motion.div
@@ -49,7 +52,7 @@ const Projects = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-white dark:bg-ocean-800 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            className="bg-blue-100 text-black dark:bg-blue-800 dark:text-blue-300 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="flex items-center mb-4">
               <project.icon className="w-6 h-6 text-ocean-600 dark:text-ocean-300 mr-3" />
@@ -67,7 +70,7 @@ const Projects = () => {
               ))}
             </div>
             <a
-              href={project.link}
+              href="https://github.com/Clement-254?tab=repositories"
               className="inline-flex items-center text-ocean-600 dark:text-ocean-300 hover:text-ocean-800 dark:hover:text-ocean-100 transition-colors"
             >
               Learn More →
@@ -76,7 +79,8 @@ const Projects = () => {
         ))}
       </div>
     </motion.div>
-  );
+ 
+  );     
 };
 
 export default Projects;

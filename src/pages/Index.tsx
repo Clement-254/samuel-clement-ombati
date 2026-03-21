@@ -11,17 +11,17 @@ const Index = () => {
   const testimonials = [
     {
       text: "Clement's extraordinary blend of medical knowledge and technical expertise makes him an invaluable asset in healthcare innovation.",
-      author: "Dr. Sarah Chen",
-      role: "Chief of Medicine, Central Hospital"
+      author: "Dr. Sarah Kariuki",
+      role: "Laikipia District Hospital"
     },
     {
       text: "His ability to bridge the gap between clinical medicine and software development is remarkable. A true pioneer in healthcare tech.",
-      author: "James Wilson",
+      author: "James Mwangi",
       role: "Tech Lead, HealthTech Solutions"
     },
     {
       text: "Clement brings a fresh perspective to medical software development, combining clinical insights with technical excellence.",
-      author: "Dr. Michael Roberts",
+      author: "Dr. Michael Otieno",
       role: "Medical Research Director"
     }
   ];
@@ -29,16 +29,16 @@ const Index = () => {
   const resumeData = {
     education: [
       {
-        period: "2020 - Present",
-        title: "Doctor of Medicine",
-        institution: "Medical University",
+        period: "2024 - Present",
+        title: "Bachelor of Science in Clinical Medicine (Expected 2028)",
+        institution: "Karatina University",
         description: "Specializing in Clinical Medicine with focus on Healthcare Technology"
       },
       {
-        period: "2016 - 2020",
-        title: "BSc in Computer Science",
-        institution: "Tech University",
-        description: "Focus on Software Engineering and AI/ML applications in Healthcare"
+        period: "2023 - 2024",
+        title: "Certificate in Software Development & AI/ML",
+        institution: "Modcom Institute",
+        description: "Focus on Software development and AI/ML applications in Healthcare"
       }
     ],
     experience: [
@@ -49,16 +49,16 @@ const Index = () => {
         description: "Developing innovative healthcare applications using modern web technologies"
       },
       {
-        period: "2019 - 2021",
-        title: "Medical Research Assistant",
-        company: "Central Hospital",
+        period: "2026 - Present",
+        title: "Medical Research ",
+        company: "Karatina Hospital",
         description: "Conducted research on AI applications in medical diagnosis"
       }
     ]
   };
 
   return (
-    <div className="min-h-[calc(100vh-5rem)]">
+    <div className="bg-wolf-100 dark:bg-wolf-900 min-h-[calc(100vh-5rem)]">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -97,7 +97,7 @@ const Index = () => {
               transition={{ delay: 0.4 }}
               className="text-lg md:text-xl text-wolf-600 dark:text-wolf-300 max-w-2xl mx-auto px-4"
             >
-              As a Clinical Medicine student and Software Developer, I'm passionate about leveraging technology 
+              As a Clinical Medicine student and Software Developer, I'm passionate about leveraging technology
               to revolutionize healthcare delivery and improve patient outcomes.
             </motion.p>
 
@@ -109,14 +109,14 @@ const Index = () => {
             >
               <a
                 href="/about"
-                className="group px-6 py-3 rounded-lg bg-wolf-800 dark:bg-wolf-100 text-wolf-100 dark:text-wolf-800 hover:bg-wolf-700 dark:hover:bg-wolf-200 transition-colors flex items-center justify-center gap-2"
+                className="group px-6 py-3 rounded-lg bg-wolf-800 dark:bg-blue-200  dark:hover:bg-blue-500 dark:bg-wolf-100 text-wolf-100 dark:text-wolf-800 hover:bg-wolf-700 transition-colors flex items-center justify-center gap-2"
               >
                 Learn More
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="/contact"
-                className="px-6 py-3 rounded-lg border border-wolf-300 dark:border-wolf-700 text-wolf-800 dark:text-wolf-100 hover:bg-wolf-200 dark:hover:bg-wolf-800 transition-colors"
+                className="px-6 py-3 rounded-lg text-wolf-800 dark:text-wolf-100 hover:bg-wolf-200  dark:bg-blue-500  dark:hover:bg-blue-200 transition-colors"
               >
                 Contact Me
               </a>
@@ -133,25 +133,25 @@ const Index = () => {
         className="mt-16 md:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 px-4"
       >
         {[
-          { 
-            icon: Stethoscope, 
-            title: "Clinical Medicine", 
-            description: "Pursuing advanced medical education with focus on patient care and modern healthcare practices" 
+          {
+            icon: Stethoscope,
+            title: "Clinical Medicine",
+            description: "Pursuing advanced medical education with focus on patient care and modern healthcare practices"
           },
-          { 
-            icon: Code, 
-            title: "Software Development", 
-            description: "Building healthcare solutions with modern web technologies and best practices" 
+          {
+            icon: Code,
+            title: "Software Development",
+            description: "Building healthcare solutions with modern web technologies and best practices"
           },
-          { 
-            icon: Brain, 
-            title: "AI in Healthcare", 
-            description: "Exploring the intersection of artificial intelligence and medical diagnosis" 
+          {
+            icon: Brain,
+            title: "AI in Healthcare",
+            description: "Exploring the intersection of artificial intelligence and medical diagnosis"
           },
-          { 
-            icon: Beaker, 
-            title: "Medical Research", 
-            description: "Contributing to evidence-based healthcare through technology-driven research" 
+          {
+            icon: Beaker,
+            title: "Medical Research",
+            description: "Contributing to evidence-based healthcare through technology-driven research"
           },
         ].map((feature, index) => (
           <motion.div
@@ -177,7 +177,7 @@ const Index = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.7 }}
-        className="py-16 bg-white dark:bg-wolf-800"
+        className=" py-16 mt-16 rounded-lg  bg-blue-100 text-black dark:bg-blue-800 dark:text-blue-300"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
