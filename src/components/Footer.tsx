@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, Phone, } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
@@ -75,6 +75,15 @@ const Footer = () => {
               </a>
               <a href="mailto:clementsamuel006@gmail.com" aria-label="Send me an email" className="text-ocean-600 dark:text-ocean-300 hover:text-ocean-800 dark:hover:text-ocean-100 transition-colors">
                 <Mail className="w-5 h-5" />
+              </a>            
+              <a
+                href="https://wa.me/2547113805321?text=Hello%20I%20am%20interested%20in%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-ocean-600 dark:text-ocean-300 hover:text-ocean-800 dark:hover:text-ocean-100 transition-colors"
+              >
+                {/*<Phone className="w-5 h-5" /> |  */}
+                <span>Chat on WhatsApp</span>
               </a>
             </div>
           </div>
